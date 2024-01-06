@@ -58,10 +58,10 @@ export default function TodoInput(props: Props) {
 
   if (!address) return null;
   return (
-    <div className="mb-4">
+    <div className="mb-4 flex flex-1">
       <div className="flex mt-4 w-full">
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker "
+          className="shadow appearance-none border rounded w-full py-2 px-3 mr-2 text-grey-darker "
           placeholder={id ? "Update Todo" : "Add Todo"}
           value={value}
           onChange={(e) => setValue(e.target.value)}
