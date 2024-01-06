@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+import Web3Context from "@/context/web3-context";
+import ToastContainer from "@/component/container/toast.container";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "TodoList Web3",
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>
+        <ToastContainer />
+        <Web3Context>{children}</Web3Context>
+      </body>
     </html>
   );
 }
